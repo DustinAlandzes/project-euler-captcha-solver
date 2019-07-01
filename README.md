@@ -30,5 +30,15 @@ This will write out "captcha_model.hdf5" and "model_labels.dat"
 ### Step 3: Use the model to solve CAPTCHAs!
 
 Run: 
-
 python3 solve_captchas_with_model.py
+
+
+## todo
+* build mechanical turk pipeline to solve captchas and generate training data for keras model
+  - reusable?
+  - https://blog.mturk.com/tutorial-a-beginners-guide-to-crowdsourcing-ml-training-data-with-python-and-mturk-d8df4bdf2977
+  - make s3 bucket, upload images, create mturk taskapis with boto3
+  - train model with results
+  - current way of keeping captcha answers in image name maybe bad
+* serve keras model from python api on ec2
+* firefox/chrome extension that calls api

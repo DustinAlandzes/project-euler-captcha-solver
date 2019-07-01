@@ -1,15 +1,16 @@
-import cv2
-import pickle
 import os.path
+import pickle
+
+import cv2
 import numpy as np
 from imutils import paths
-from sklearn.preprocessing import LabelBinarizer
-from sklearn.model_selection import train_test_split
-from keras.models import Sequential
 from keras.layers.convolutional import Conv2D, MaxPooling2D
 from keras.layers.core import Flatten, Dense
-from helpers import resize_to_fit
+from keras.models import Sequential
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import LabelBinarizer
 
+from helpers import resize_to_fit
 
 LETTER_IMAGES_FOLDER = "extracted_letter_images"
 MODEL_FILENAME = "captcha_model.hdf5"
@@ -24,6 +25,11 @@ labels = []
 for image_file in paths.list_images(LETTER_IMAGES_FOLDER):
     # Load the image and convert it to grayscale
     image = cv2.imread(image_file)
+
+    if type(image) == type(None):
+        print("{} returned None from cv2.imread".format(image_file))
+        continue
+
     image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
     # Resize the letter so it fits in a 20x20 pixel box
@@ -73,7 +79,7 @@ model.add(Flatten())
 model.add(Dense(500, activation="relu"))
 
 # Output layer with 32 nodes (one for each possible letter/number we predict)
-model.add(Dense(32, activation="softmax"))
+model.add(Dense(10, activation="softmax"))
 
 # Ask Keras to build the TensorFlow model behind the scenes
 model.compile(loss="categorical_crossentropy", optimizer="adam", metrics=["accuracy"])
