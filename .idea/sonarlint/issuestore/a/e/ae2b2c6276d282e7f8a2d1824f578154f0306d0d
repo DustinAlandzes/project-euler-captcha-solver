@@ -1,43 +1,0 @@
-
-mpython:S3776¶"TRefactor this function to reduce its Cognitive Complexity from 28 to the 15 allowed.(œºÛ§
-dpython:S117?"MRename this parameter "X" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÔÒ€õ
-dpython:S117`"MRename this parameter "X" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÄÅÃ“
-ipython:S117j"MRename this parameter "X" to match the regular expression ^[_a-z][a-z0-9_]*$.(ì¼«ûøÿÿÿÿ
-cpython:S117o"MRename this parameter "X" to match the regular expression ^[_a-z][a-z0-9_]*$.(¸ÔÉ"
-epython:S117¥"MRename this parameter "X" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÿæàö
-jpython:S117®"MRename this parameter "X" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ü£Óãøÿÿÿÿ
-epython:S117ø"MRename this parameter "X" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÿæàö
-jpython:S117‚"MRename this parameter "X" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ü£Óãøÿÿÿÿ
-epython:S117¯"MRename this parameter "X" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÔÒ€õ
-dpython:S117Ò"MRename this parameter "X" to match the regular expression ^[_a-z][a-z0-9_]*$.(¸ÔÉ"
-epython:S117³"MRename this parameter "X" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÿæàö
-epython:S117û"MRename this parameter "X" to match the regular expression ^[_a-z][a-z0-9_]*$.(˜îÎİ
-epython:S117 "MRename this parameter "X" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÔÒ€õ
-epython:S117ù"MRename this parameter "X" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ÿ„¸è
-jpython:S117­"MRename this parameter "X" to match the regular expression ^[_a-z][a-z0-9_]*$.(Õß¥úÿÿÿÿ
-jpython:S117²"MRename this parameter "X" to match the regular expression ^[_a-z][a-z0-9_]*$.(şñôşÿÿÿÿ
-epython:S117•"MRename this parameter "X" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÔÒ€õ
-dpython:S117ì"MRename this parameter "X" to match the regular expression ^[_a-z][a-z0-9_]*$.(‹é
-dpython:S117ù"MRename this parameter "X" to match the regular expression ^[_a-z][a-z0-9_]*$.(¸ÔÉ"
-epython:S117”"MRename this parameter "X" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÔÒ€õ
-dpython:S117ê"MRename this parameter "X" to match the regular expression ^[_a-z][a-z0-9_]*$.(‹é
-dpython:S117ü"MRename this parameter "X" to match the regular expression ^[_a-z][a-z0-9_]*$.(¸ÔÉ"
-epython:S117—"MRename this parameter "X" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÔÒ€õ
-epython:S117Ú"MRename this parameter "X" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÔÒ€õ
-dpython:S117û"MRename this parameter "X" to match the regular expression ^[_a-z][a-z0-9_]*$.(¸ÔÉ"
-epython:S117Œ
-"MRename this parameter "X" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÔÒ€õ
-epython:S117¯
-"MRename this parameter "X" to match the regular expression ^[_a-z][a-z0-9_]*$.(é®¾‚
-dpython:S117²
-"MRename this parameter "X" to match the regular expression ^[_a-z][a-z0-9_]*$.(¸ÔÉ"
-epython:S117•"MRename this parameter "X" to match the regular expression ^[_a-z][a-z0-9_]*$.(é®¾‚
-epython:S117Ş"MRename this parameter "X" to match the regular expression ^[_a-z][a-z0-9_]*$.(£„–º
-epython:S117ì"MRename this parameter "X" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÔÒ€õ
-epython:S117Ó"MRename this parameter "X" to match the regular expression ^[_a-z][a-z0-9_]*$.(òò©Ş
-jpython:S117"MRename this parameter "X" to match the regular expression ^[_a-z][a-z0-9_]*$.(şñôşÿÿÿÿ
-jpython:S117¦"MRename this parameter "X" to match the regular expression ^[_a-z][a-z0-9_]*$.(à»ñ×üÿÿÿÿ
-dpython:S117Ê"MRename this parameter "X" to match the regular expression ^[_a-z][a-z0-9_]*$.(¸ÔÉ"
-dpython:S117å"MRename this parameter "X" to match the regular expression ^[_a-z][a-z0-9_]*$.(¸ÔÉ"
-jpython:S117ú"MRename this parameter "X" to match the regular expression ^[_a-z][a-z0-9_]*$.(à»ñ×üÿÿÿÿ
-upython:S117Á"XRename this local variable "CVClass" to match the regular expression ^[_a-z][a-z0-9_]*$.(š¦³ıÿÿÿÿ
