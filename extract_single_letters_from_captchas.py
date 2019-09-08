@@ -1,9 +1,7 @@
-import os
 import os.path
-import cv2
-import glob
-import imutils
+import os.path
 
+import cv2
 
 CAPTCHA_IMAGE_FOLDER = "new_captcha_images"
 OUTPUT_FOLDER = "extracted_letter_images"
@@ -20,7 +18,7 @@ for (i, captcha_image_file) in enumerate(captcha_image_files):
     # Since the filename contains the captcha text (i.e. "2A2X.png" has the text "2A2X"),
     # grab the base filename as the text
     filename = os.path.basename(captcha_image_file)
-    captcha_correct_text = os.path.splitext(filename)[0]
+    captcha_correct_text = os.path.splitext(filename)[0].split("_")[1]
 
     # Load the image and convert it to grayscale
     image = cv2.imread(captcha_image_file)
@@ -70,6 +68,8 @@ for (i, captcha_image_file) in enumerate(captcha_image_files):
 
     # Save out each letter as a single image
     for letter_bounding_box, letter_text in zip(letter_image_regions, captcha_correct_text):
+        if not letter_text.isdigit():
+            continue
         # Grab the coordinates of the letter in the image
         x, y, w, h = letter_bounding_box
 

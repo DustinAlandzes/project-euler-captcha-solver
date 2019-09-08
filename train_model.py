@@ -16,7 +16,6 @@ LETTER_IMAGES_FOLDER = "extracted_letter_images"
 MODEL_FILENAME = "captcha_model.hdf5"
 MODEL_LABELS_FILENAME = "model_labels.dat"
 
-
 # initialize the data and labels
 data = []
 labels = []
@@ -44,7 +43,6 @@ for image_file in paths.list_images(LETTER_IMAGES_FOLDER):
     # Add the letter image and it's label to our training data
     data.append(image)
     labels.append(label)
-
 
 # scale the raw pixel intensities to the range [0, 1] (this improves training)
 data = np.array(data, dtype="float") / 255.0

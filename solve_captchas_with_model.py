@@ -1,16 +1,13 @@
-from keras.models import load_model
-from helpers import resize_to_fit
-from imutils import paths
-import numpy as np
-import imutils
-import cv2
 import pickle
 
+import cv2
+import numpy as np
+from imutils import paths
+from keras.models import load_model
 
 MODEL_FILENAME = "captcha_model.hdf5"
 MODEL_LABELS_FILENAME = "model_labels.dat"
-CAPTCHA_IMAGE_FOLDER = "new_captcha_images"
-
+CAPTCHA_IMAGE_FOLDER = "test_set"
 
 # Load up the model labels (so we can translate model predictions to actual letters)
 with open(MODEL_LABELS_FILENAME, "rb") as f:
@@ -23,8 +20,9 @@ model = load_model(MODEL_FILENAME)
 # In the real world, you'd replace this section with code to grab a real
 # CAPTCHA image from a live website.
 captcha_image_files = list(paths.list_images(CAPTCHA_IMAGE_FOLDER))
-captcha_image_files = np.random.choice(captcha_image_files, size=(10,), replace=False)
+# captcha_image_files = np.random.choice(captcha_image_files, size=(10,), replace=False)
 
+correct = 0
 # loop over the image paths
 for image_file in captcha_image_files:
     # Load the image and convert it to grayscale
@@ -63,7 +61,7 @@ for image_file in captcha_image_files:
             # This is a normal letter by itself
             letter_image_regions.append((x, y, w, h))
 
-    # If we found more or less than 4 letters in the captcha, our letter extraction
+    # If we found more or less than 5 letters in the captcha, our letter extraction
     # didn't work correctly. Skip the image instead of saving bad training data!
     if len(letter_image_regions) != 5:
         continue
@@ -84,9 +82,11 @@ for image_file in captcha_image_files:
 
         # Extract the letter from the original image with a 2-pixel margin around the edge
         letter_image = image[y - 2:y + h + 2, x - 2:x + w + 2]
-
-        # Re-size the letter image to 20x20 pixels to match training data
-        letter_image = cv2.resize(letter_image, (20, 20))
+        try:
+            # Re-size the letter image to 20x20 pixels to match training data
+            letter_image = cv2.resize(letter_image, (20, 20))
+        except:
+            break
 
         # Turn the single image into a 4d list of images to make Keras happy
         letter_image = np.expand_dims(letter_image, axis=2)
@@ -105,8 +105,10 @@ for image_file in captcha_image_files:
 
     # Print the captcha's text
     captcha_text = "".join(predictions)
-    print("CAPTCHA text is: {}".format(captcha_text))
+    answer = image_file.split("_")[2].split(".")[0]
 
-    # Show the annotated image
-    cv2.imshow("Output", output)
-    cv2.waitKey()
+    print(captcha_text, answer)
+    if captcha_text == answer:
+        correct += 1
+
+print(correct, len(captcha_image_files))
