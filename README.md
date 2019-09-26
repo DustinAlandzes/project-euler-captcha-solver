@@ -1,4 +1,4 @@
-# Solving captcha on projecteuler.com with multiclass image classification
+# Solving captcha on projecteuler.com
 
 ## setup
 ```
