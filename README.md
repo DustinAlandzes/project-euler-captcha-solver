@@ -1,39 +1,32 @@
-### Before you get started
+# Solving captcha on projecteuler.com with multiclass image classification
 
-To run these scripts, you need the following installed:
+## setup
+```
+git clone 
+cd 
+virtualenv -p /usr/local/bin/python3 venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
 
-1. Python 3
-2. OpenCV 3 w/ Python extensions
- - I highly recommend these OpenCV installation guides: 
-   https://www.pyimagesearch.com/opencv-tutorials-resources-guides/ 
-3. The python libraries listed in requirements.txt
- - Try running "pip3 install -r requirements.txt"
+### step 1: Extract letters from images
+```
+python extract_single_letters_from_captchas.py
+```
 
-### Step 1: Extract single letters from CAPTCHA images
+### Train Keras model, and run
+```
+python train_model.py
+python solve_captchas_with_model.py
 
-Run:
+```
 
-python3 extract_single_letters_from_captchas.py
-
-The results will be stored in the "extracted_letter_images" folder.
-
-
-### Step 2: Train the neural network to recognize single letters
-
-Run:
-
-python3 train_model.py
-
-This will write out "captcha_model.hdf5" and "model_labels.dat"
-
-
-### Step 3: Use the model to solve CAPTCHAs!
-
-Run: 
-python3 solve_captchas_with_model.py
-
+### Train XGBoost model
+```
+python train_model.py
+```
 
 ## todo
-* tune model some more, 1s are mixed up with 4s
-* serve keras model from python api on ec2
+* refactor
+* serve models from python api
 * firefox/chrome extension that calls api
