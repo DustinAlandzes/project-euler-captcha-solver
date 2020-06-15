@@ -18,7 +18,7 @@ def get_captcha_image():
 
 def solve_captcha():
     # original from the ipynb
-    api = TwoCaptchaApi('7b0b48da984ae64599b7bede2829a7cd')
+    api = TwoCaptchaApi('')
     print(f"Balance: {api.get_balance()}")
 
     captcha_image_as_bytes = get_captcha_image()
